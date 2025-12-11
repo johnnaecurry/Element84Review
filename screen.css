@@ -62,21 +62,29 @@ border: 1px solid #292929;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 .carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .carousel-image {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  max-width: 100%;
   height: auto;
-  display: none;
 }
 
 .carousel-image.active {
-  display: block;
+  opacity: 1;
+  position: relative;
 }
 
 .prev, .next {
